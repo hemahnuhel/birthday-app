@@ -23,3 +23,8 @@ Fill in your Gmail address, [App Password](https://myaccount.google.com/apppassw
 npm start
 ```
 Visit `http://localhost:3000`
+
+
+## Deployment
+
+Deployed on [Railway](https://birthday-app-production-0471.up.railway.app/)
