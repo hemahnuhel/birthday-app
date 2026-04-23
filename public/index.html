@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Reminder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <span class="logo-icon">🎂</span>
+  <h1>Birthday <span>Reminder</span></h1>
+</header>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="card">
+    <div class="card-title">Add Customer</div>
+    <div class="card-sub">Fill in the details to register a new birthday.</div>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="e.g. Amara Johnson" autocomplete="off"/>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="e.g. amara@example.com"/>
+
+    <label>Date of Birth</label>
+    <div class="dob-wrap">
+      <div class="custom-select" id="month-select">
+        <div class="cs-trigger" onclick="toggleDropdown('month-select')">
+          <span id="month-label">Month</span>
+          <svg width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
+        </div>
+        <div class="cs-dropdown" id="month-dropdown"></div>
+      </div>
+      <div class="custom-select" id="day-select">
+        <div class="cs-trigger" onclick="toggleDropdown('day-select')">
+          <span id="day-label">Day</span>
+          <svg width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
+        </div>
+        <div class="cs-dropdown" id="day-dropdown"></div>
+      </div>
+      <input type="number" id="dob-year" placeholder="Year" min="1920" max="2025" style="margin-bottom:0;"/>
+    </div>
+
+    <button class="btn" onclick="addUser()">Add Customer</button>
+    <button class="btn-test" onclick="testCheck()">⚡ Manual Email Trigger</button>
+
+    <div id="toast"></div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card">
+    <div class="table-header">
+      <div>
+        <div class="card-title">Registered Customers</div>
+        <div class="card-sub">All customers with birthday reminders active.</div>
+      </div>
+      <span class="count-badge" id="count-badge">0 people</span>
+    </div>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Search by name or email…" oninput="renderTable()"/>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Email</th>
+          <th>Birthday</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="4"><div class="empty"><span class="empty-icon">🎈</span>No customers yet.</div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+  <script src="/js/dashboard.js"></script>
+
+</body>
+</html>
