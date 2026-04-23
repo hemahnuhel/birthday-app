@@ -332,6 +332,49 @@ tbody td:first-child { color: var(--text); }
 
 
 @media (max-width: 720px) {
-  .container { grid-template-columns: 1fr; margin: 20px auto; }
-  header { padding: 16px 20px; }
+  header { padding: 14px 16px; }
+  header h1 { font-size: 17px; }
+  header .logo-icon { font-size: 20px; }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 16px auto;
+    padding: 0 12px;
+    gap: 16px;
+  }
+
+  .card { padding: 20px 16px; }
+
+  .card-title { font-size: 19px; }
+  .card-sub { font-size: 12px; margin-bottom: 20px; }
+
+  input, .cs-trigger {
+    font-size: 16px; /* prevents iOS zoom on focus */
+    padding: 11px 12px;
+  }
+
+  .btn { padding: 13px; font-size: 15px; }
+  .btn-test { font-size: 13px; }
+
+  .dob-wrap {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .dob-wrap input[type="number"] {
+    grid-column: 1 / -1;
+  }
+
+  .table-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  table { font-size: 12.5px; }
+  thead th { padding: 0 6px 8px; font-size: 10px; }
+  tbody td { padding: 10px 6px; }
+
+  /* hide email column on small screens */
+  thead th:nth-child(2),
+  tbody td:nth-child(2) { display: none; }
+
+  .avatar { width: 26px; height: 26px; font-size: 11px; margin-right: 6px; }
+
+  .cs-dropdown { max-height: 180px; }
 }
