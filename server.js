@@ -78,9 +78,7 @@ const birthdayEmailHTML = require("./emailTemplate");
 
 function createTransporter() {
   return nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    service: "gmail",
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_APP_PASSWORD,
